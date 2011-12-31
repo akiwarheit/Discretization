@@ -39,9 +39,21 @@ public class Bin {
 	}
 	
 	public int[] determineEqualDepth() {
-		int[] equalDepth = new int[depth];
-		//TODO under construction pani
+		List<Integer> binContainer = new ArrayList<Integer>();
+		int flag = 0;
+		for(int x = 0; x < depth; ++x) {
+			flag = x + ((position-1) * depth);
+			if(flag < originalArray.length)
+				binContainer.add(originalArray[flag]);
+			else
+				break;
+		}
 
+		int[] equalDepth = new int[binContainer.size()];
+		for(int x = 0; x < binContainer.size(); ++x) {
+			equalDepth[x] = binContainer.get(x).intValue();
+		}
+		
 		return equalDepth;
 	}
 	

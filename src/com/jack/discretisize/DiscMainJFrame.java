@@ -38,8 +38,12 @@ public class DiscMainJFrame extends JFrame {
 						System.out.println("ONSET :" + bin.onset);
 						System.out.println("OFFSET :" + bin.offset);
 						int[] equalWidth = bin.determineEqualWidth();
-						for(int y = 0; y < equalWidth.length; ++y) {
-							System.out.println(equalWidth[y]);
+						int[] equalDepth = bin.determineEqualDepth();
+						for(int y = 0; y < equalWidth.length; ++y) {					
+							System.out.println("Equal Width"+equalWidth[y]);
+						}
+						for(int y = 0; y < equalDepth.length; ++y) {
+							System.out.println("Equal Depth"+equalDepth[y]);
 						}
 						++x;
 					}
