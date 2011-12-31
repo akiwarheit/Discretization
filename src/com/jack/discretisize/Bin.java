@@ -39,12 +39,9 @@ public class Bin {
 	}
 	
 	public int[] determineEqualDepth() {
-//		List<Integer> binContainer = new ArrayList<Integer>();
 		int[] equalDepth = new int[depth];
-		for(int x = onset; x <= offset; ++x) {
-			equalDepth[x] = originalArray[x];
-		}
-		
+		//TODO under construction pani
+
 		return equalDepth;
 	}
 	
