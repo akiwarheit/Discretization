@@ -20,6 +20,8 @@ public class DiscMainJFrame extends JFrame {
 	private JPanel contentPane;
 	private JTable unsortedTable;
 	private JTable sortedTable;
+	
+	static List<Bin> bins;
 
 	/**
 	 * Launch the application.
@@ -30,22 +32,16 @@ public class DiscMainJFrame extends JFrame {
 			public void run() {
 				try {
 					DiscMainJFrame frame = new DiscMainJFrame();
-					d = new Discretization(26,4,1,100);
-					List<Bin> bins = d.getBins();
-					int x = 1;
+					d = new Discretization(24,4,1,100);
+					bins = d.getBins();
 					for(Bin bin : bins) {
-						System.out.println("**BIN "+x+"**");
+						System.out.println("**BIN "+bin.position+" **");
 						System.out.println("ONSET :" + bin.onset);
 						System.out.println("OFFSET :" + bin.offset);
-						int[] equalWidth = bin.determineEqualWidth();
-						int[] equalDepth = bin.determineEqualDepth();
-						for(int y = 0; y < equalWidth.length; ++y) {					
-							System.out.println("Equal Width"+equalWidth[y]);
+						int[] smoothByBoundaries = bin.smoothByBoundaries();
+						for(int y = 0; y < smoothByBoundaries.length; ++y) {
+							System.out.println(smoothByBoundaries[y]);
 						}
-						for(int y = 0; y < equalDepth.length; ++y) {
-							System.out.println("Equal Depth"+equalDepth[y]);
-						}
-						++x;
 					}
 					frame.setVisible(true);
 				} catch (Exception e) {

@@ -41,7 +41,7 @@ public class Discretization {
 		this.depth = MathHelper.calculateDepth(size, interval);
 		
 		for(int x = 0; x < size; ++x) {
-			System.out.println(matrix[x]);
+//			System.out.println(matrix[x]);
 			System.out.println("Sorted: " + sortedMatrix[x]);
 		}
 		System.out.println("MAX:" + max);

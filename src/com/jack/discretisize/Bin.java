@@ -3,6 +3,8 @@ package com.jack.discretisize;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.jack.discretisize.helper.MathHelper;
+
 public class Bin {
 	
 	int[] originalArray;
@@ -52,6 +54,34 @@ public class Bin {
 		int[] equalDepth = new int[binContainer.size()];
 		for(int x = 0; x < binContainer.size(); ++x) {
 			equalDepth[x] = binContainer.get(x).intValue();
+		}
+		
+		return equalDepth;
+	}
+	
+	public double[] smoothByMean() {
+		int[] equalDepth = determineEqualDepth();
+		double mean = MathHelper.calculateMean(equalDepth);
+		double[] smoothedByMeans = new double[equalDepth.length];
+		
+		for(int x = 0; x < smoothedByMeans.length; ++x) {
+			smoothedByMeans[x] = mean;
+		}
+		
+		return smoothedByMeans;
+	}
+	
+	public int[] smoothByBoundaries() {
+		int[] equalDepth = determineEqualDepth();
+		int max = MathHelper.determineMax(equalDepth);
+		int min = MathHelper.determineMin(equalDepth);	
+		
+		
+		for(int x = 0; x < equalDepth.length; ++x) {
+			if((min - equalDepth[x]) > (equalDepth[x] - max)) {
+				equalDepth[x] = min;
+			} else
+				equalDepth[x] = max;
 		}
 		
 		return equalDepth;

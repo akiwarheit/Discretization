@@ -38,16 +38,16 @@ public class MathHelper {
 		return Math.ceil(width);
 	}
 	
-	public static int calculateMean(int[] projection) {
+	public static double calculateMean(int[] projection) {
 		int sum = 0;
 		int average = projection.length;
-		int mean = 0;
+		double mean = 0;
 		
 		for(int x = 0; x < projection.length; ++x) {
 			sum += projection[x];
 		}
 		
-		mean = sum / average;
+		mean = (double) (sum / average);
 		
 		return mean;
 	}
@@ -55,5 +55,7 @@ public class MathHelper {
 	public static double calculateDepth(int size, double interval) {
 		return Math.floor((double)(size/interval));
 	}
+	
+	
 	
 }
