@@ -1,15 +1,14 @@
 package com.jack.discretisize;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
+import javax.swing.table.DefaultTableModel;
 
 
 public class DiscMainJFrame extends JFrame {
