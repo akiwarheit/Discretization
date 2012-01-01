@@ -2,7 +2,7 @@ package com.jack.discretisize.helper;
 
 import java.util.Arrays;
 
-public class MathHelper {
+public final class MathHelper {
 	
 	public static int[] generateRandomNumbers(int size, int seedMin, int seedMax) {
 		int[] randomMatrix = new int[size];

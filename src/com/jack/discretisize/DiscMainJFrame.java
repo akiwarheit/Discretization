@@ -32,10 +32,10 @@ public class DiscMainJFrame extends JFrame {
 			public void run() {
 				try {
 					DiscMainJFrame frame = new DiscMainJFrame();
-					d = new Discretization(24,4,1,100);
+					d = new Discretization(12,3,1,100);
 					bins = d.getBins();
 					for(Bin bin : bins) {
-						System.out.println("**BIN "+bin.position+" **");
+						System.out.println("**BIN "+bin.getPosition()+" **");
 						System.out.println("ONSET :" + bin.onset);
 						System.out.println("OFFSET :" + bin.offset);
 						int[] smoothByBoundaries = bin.smoothByBoundaries();

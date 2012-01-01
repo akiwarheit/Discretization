@@ -86,5 +86,31 @@ public class Bin {
 		
 		return equalDepth;
 	}
+
+	public int[] getOriginalArray() {
+		return originalArray;
+	}
+
+	public int getOnset() {
+		return onset;
+	}
+
+	public int getOffset() {
+		return offset;
+	}
+
+	public int getWidth() {
+		return width;
+	}
+
+	public int getDepth() {
+		return depth;
+	}
+
+	public int getPosition() {
+		return position;
+	}
+	
+	
 	
 }
