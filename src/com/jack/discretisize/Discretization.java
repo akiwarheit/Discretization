@@ -68,5 +68,37 @@ public class Discretization {
 	public List<Bin> getBins() {
 		return bins;
 	}
+
+	public int getSize() {
+		return size;
+	}
+
+	public double getInterval() {
+		return interval;
+	}
+
+	public int[] getMatrix() {
+		return matrix;
+	}
+
+	public int[] getSortedMatrix() {
+		return sortedMatrix;
+	}
+
+	public int getMax() {
+		return max;
+	}
+
+	public int getMin() {
+		return min;
+	}
+
+	public double getWidth() {
+		return width;
+	}
+
+	public double getDepth() {
+		return depth;
+	}
 	
 }
