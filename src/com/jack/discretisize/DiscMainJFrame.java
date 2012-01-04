@@ -1,6 +1,5 @@
 package com.jack.discretisize;
 
-import java.awt.EventQueue;
 import java.util.List;
 
 import javax.swing.JFrame;
@@ -55,7 +54,7 @@ public class DiscMainJFrame extends JFrame {
 			    if (args.length > 0) {
 			        cm = new ConfigurationManager(args[0]);
 			    } else {
-			        cm = new ConfigurationManager("discretization.config.xml");
+			        cm = new ConfigurationManager("src/discretization.config.xml");
 			    }
 			    
 			    Recognizer recognizer = (Recognizer) cm.lookup("recognizer");
@@ -76,6 +75,9 @@ public class DiscMainJFrame extends JFrame {
                 String resultText = result.getBestFinalResultNoFiller();
                 if(resultText.contains("generate")) {
                 	frame.updateUI();
+                }
+                if(resultText.contains("clear")) {
+                	frame.clearUI();
                 }
             } else {
                 System.out.println("I can't hear what you said.\n");
@@ -217,5 +219,14 @@ public class DiscMainJFrame extends JFrame {
 			boundariesTextPane.setText(boundariesOutput);
 			meansTextPane.setText(meansOutput);
 		}
+	}
+	
+	public void clearUI() {
+		unsortedArray.setText("");
+		sortedArray.setText("");	
+		equalWidthTextPane.setText("");
+		equalDepthTextPane.setText("");
+		boundariesTextPane.setText("");
+		meansTextPane.setText("");	
 	}
 }
