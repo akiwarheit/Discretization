@@ -161,13 +161,13 @@ public class DiscMainJFrame extends JFrame {
 		boundariesTextPane.setEditable(false);
 		boundariesTextPane.setBounds(10, 104, 228, 131);
 		panel_3.add(boundariesTextPane);
-		dis = new Discretization(12, 3, 20, 50);
+		dis = new Discretization(24, 6, 20, 50);
 		bins = dis.getBins();
 		updateUI();
 	}
 	
 	public void updateUI() {
-		dis = new Discretization(12, 3, 20, 50);
+		dis = new Discretization(24, 6, 20, 50);
 		bins = dis.getBins();
 //		private JTextPane equalWidthTextPane;
 //		private JTextPane equalDepthTextPane;
